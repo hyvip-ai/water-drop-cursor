@@ -1,3 +1,4 @@
+(function(){function r(e,n,t){function o(i,f){if(!n[i]){if(!e[i]){var c="function"==typeof require&&require;if(!f&&c)return c(i,!0);if(u)return u(i,!0);var a=new Error("Cannot find module '"+i+"'");throw a.code="MODULE_NOT_FOUND",a}var p=n[i]={exports:{}};e[i][0].call(p.exports,function(r){var n=e[i][1][r];return o(n||r)},p,p.exports,r,e,n,t)}return n[i].exports}for(var u="function"==typeof require&&require,i=0;i<t.length;i++)o(t[i]);return o}return r})()({1:[function(require,module,exports){
 const gooEffect = ` <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="800" class="gooSVG">
 <defs>
     <filter id="goo">
@@ -11,12 +12,12 @@ const gooEffect = ` <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width=
 
 const cursorDiv = `<div id='cursor' class='Cursor'></div>`;
 
-function addRequiredElements() {
+function addRequiredElements(){
   document.body.innerHTML = gooEffect + document.body.innerHTML;
-  document.body.innerHTML = cursorDiv + document.body.innerHTML;
+document.body.innerHTML = cursorDiv + document.body.innerHTML;
 }
-function init(sectionClassName = 'mouse-cursor', buttonId = 'button') {
-  if (document) {
+ function init(sectionClassName = 'mouse-cursor', buttonId = 'button') {
+  if(document){
     addRequiredElements();
     var _createClass = (function () {
       function defineProperties(target, props) {
@@ -92,7 +93,7 @@ function init(sectionClassName = 'mouse-cursor', buttonId = 'button') {
       ]);
       return Dot;
     })();
-
+  
     function main() {
       window.addEventListener('mousemove', onMouseMove);
       window.addEventListener('touchmove', onTouchMove);
@@ -100,17 +101,17 @@ function init(sectionClassName = 'mouse-cursor', buttonId = 'button') {
       buildDots();
       render();
     }
-
+  
     function startIdleTimer() {
       timeoutID = setTimeout(goInactive, idleTimeout);
       idle = false;
     }
-
+  
     function resetIdleTimer() {
       clearTimeout(timeoutID);
       startIdleTimer();
     }
-
+  
     function goInactive() {
       idle = true;
       var _iteratorNormalCompletion = true;
@@ -140,33 +141,33 @@ function init(sectionClassName = 'mouse-cursor', buttonId = 'button') {
         }
       }
     }
-
+  
     function buildDots() {
       for (var i = 0; i < amount; i++) {
         var dot = new Dot(i);
         dots.push(dot);
       }
     }
-
+  
     var onMouseMove = function onMouseMove(event) {
       mousePosition.x = event.clientX - width / 2;
       mousePosition.y = event.clientY - width / 2;
       resetIdleTimer();
     };
-
+  
     var onTouchMove = function onTouchMove() {
       mousePosition.x = event.touches[0].clientX - width / 2;
       mousePosition.y = event.touches[0].clientY - width / 2;
       resetIdleTimer();
     };
-
+  
     var render = function render(timestamp) {
       var delta = timestamp - lastFrame;
       positionCursor(delta);
       lastFrame = timestamp;
       requestAnimationFrame(render);
     };
-
+  
     var positionCursor = function positionCursor(delta) {
       var x = mousePosition.x;
       var y = mousePosition.y;
@@ -183,9 +184,9 @@ function init(sectionClassName = 'mouse-cursor', buttonId = 'button') {
         }
       });
     };
-
+  
     main();
-
+  
     $(`.${sectionClassName}`).on('mouseenter', function (e) {
       $('#cursor').addClass('visible');
     });
@@ -195,6 +196,12 @@ function init(sectionClassName = 'mouse-cursor', buttonId = 'button') {
   }
 }
 
+
 module.exports = {
-  init,
-};
+  init
+}
+},{}],2:[function(require,module,exports){
+const { init } = require('water-drop-cursor');
+init();
+
+},{"water-drop-cursor":1}]},{},[2]);
