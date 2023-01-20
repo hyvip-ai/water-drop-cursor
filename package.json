@@ -1,6 +1,6 @@
 {
   "name": "water-drop-cursor",
-  "version": "1.0.9",
+  "version": "2.0.0",
   "description": "A simple package to add magic to your mouse cursor",
   "main": "index.js",
   "scripts": {},
