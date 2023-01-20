@@ -1,0 +1,39 @@
+.gooSVG {
+    display: none;
+}
+
+#cursor {
+    display: none;
+}
+
+#cursor.visible {
+    display: block;
+}
+
+.Cursor {
+    pointer-events: none;
+    position: fixed;
+    display: block;
+    border-radius: 0;
+    -webkit-transform-origin: center center;
+    transform-origin: center center;
+    mix-blend-mode: difference;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    -webkit-filter: url("#goo");
+    filter: url("#goo");
+}
+
+.Cursor span {
+    position: absolute;
+    display: block;
+    width: 26px;
+    height: 26px;
+    border-radius: 20px;
+    background-color: #fff;
+    -webkit-transform-origin: center center;
+    transform-origin: center center;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
