@@ -37,3 +37,9 @@
     -webkit-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
 }
+
+.mouse-cursor {
+    background-color: #fff;
+    z-index: 100;
+    position: relative;
+}
