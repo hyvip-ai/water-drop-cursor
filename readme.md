@@ -46,7 +46,7 @@ npm i water-drop-cursor
 
 2. For Vanilla JavaScript projects :
 
-   - Open the github for this particular project
+   - Open the GitHub for this particular project
    - Copy the main.js file and create it in a file with same name in your project directory and pase the code
    - Copy the style.css file and create it in a file with same name in your project directory and paste the code
    - Finally add this script at the end of your body
@@ -56,5 +56,11 @@ npm i water-drop-cursor
 
        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.3/jquery.min.js" defer></script>
 
-       <script type="main.js" defer></script>
+       <script src="main.js" defer></script>
    ```
+
+   Finally
+
+   - Add `mouse-cursor` class to the section where you want your cursor effect, if you want it in your whole project add it in `body` tag, or else add it in a `section` or `div` whatever you want
+
+# Enjoy
